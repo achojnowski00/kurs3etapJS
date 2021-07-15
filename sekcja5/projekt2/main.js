@@ -13,7 +13,7 @@ const init = () => {
 
 const createElements = () => {
   const list = document.querySelector('ul');
-  for(let i = 0; i < 10; i++){
+  for (let i = 0; i < 10; i++) {
     const elem = document.createElement('li');
     elem.textContent = 'element ' + orderElement;
     elem.style.fontSize = size + 'px';
