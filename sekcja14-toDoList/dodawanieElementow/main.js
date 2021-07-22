@@ -15,7 +15,6 @@ const listUpdate = () => {
 }
 
 const removeTask = (e) => {
-  e.target.parentNode.remove();
   const index = e.target.parentNode.id;
   toDoList.splice(index, 1)
   console.log(toDoList)
