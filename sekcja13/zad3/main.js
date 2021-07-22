@@ -25,9 +25,9 @@ const start = () => {
 }
 
 const reset = () => {
-  btnStart.textContent = 'Start';
   time = 0;
   panel.textContent = '---';
+  btnStart.textContent = 'Start';
   active = false;
   clearInterval(idI);
 }
