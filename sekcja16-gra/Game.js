@@ -3,7 +3,7 @@ class Game {
     this.stats = new Statistics();
     this.wallet = new Wallet(start);
 
-    document.getElementById('start').addEventListener('click', this.startGame.bind(this))
+    document.getElementById('start').addEventListener('click', this.startGame.bind(this));
 
     this.spanWallet = document.querySelector('.panel span.wallet');
     this.boards = document.querySelectorAll('div.color');
@@ -12,7 +12,6 @@ class Game {
     this.spanGames = document.querySelector('.score .number');
     this.spanWins = document.querySelector('.score .win');
     this.spanLoses = document.querySelector('.score .loss');
-
 
     this.render()
   }
@@ -24,15 +23,17 @@ class Game {
     })
 
     this.spanWallet.textContent = money;
-    if (result) result = `Wygrałeś ${wonMoney}`
-    else if (!result && result != '') result = `Przegrałeś ${bid}`
+    if (result) {
+      result = `Wygrałeś ${wonMoney}$`
+    } else /*if (!result) */ {
+      result = `Przegrałeś ${bid}`
+    }
     this.spanResult.textContent = result;
     this.spanGames.textContent = stats[0];
     this.spanWins.textContent = stats[1];
     this.spanLoses.textContent = stats[2];
 
-
-
+    this.inputBid.value = "";
   }
 
   startGame() {
@@ -54,7 +55,6 @@ class Game {
 
     this.stats.addGameToStatistics(win, bid);
 
-    render(colors, this.wallet.getWalletValue(), win, this.stats.showGameStatistics(), bid, wonMoney)
-
+    this.render(colors, this.wallet.getWalletValue(), win, this.stats.showGameStatistics(), bid, wonMoney)
   }
 }

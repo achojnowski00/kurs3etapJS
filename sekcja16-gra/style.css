@@ -41,6 +41,10 @@ h1 {
   text-align: center;
 }
 
+div.color {
+  transition: .1s;
+}
+
 .play button {
   width: 40%;
   height: 90px;
